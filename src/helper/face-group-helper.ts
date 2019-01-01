@@ -13,18 +13,22 @@ export default class FaceGroupHelper {
 
   private imageData: Image[] = []
 
+
   private constructor() {
     originImage.forEach((imageData) => {
       this.imageData.push(new Image(imageData))
     })
   }
 
-  /**
-   * name
-   */
   public getOriginImage() {
     return this.imageData
   }
 
-
+  // public findFaceTokenInWhichImages(faceTokens: string[]): Image[] {
+  //   faceTokens.forEach((reqFaceToken) => {
+  //     const  = this.imageData.filter((image: Image) => {
+  //       return image
+  //     })
+  //   })
+  // }
 }

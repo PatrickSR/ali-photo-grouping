@@ -1,3 +1,6 @@
+/**
+ * 脸框的信息
+ */
 export default class FaceFrame {
   public width: number
   public top: number
@@ -12,5 +15,12 @@ export default class FaceFrame {
     this.top = face_rectangle.top
     this.height = face_rectangle.height
     this.left = face_rectangle.left
+  }
+
+  /**
+   * 匹配facetoken是否一致
+   */
+  public matchFaceToken(token: string): boolean {
+    return token === this.faceToken
   }
 }

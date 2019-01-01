@@ -1,5 +1,8 @@
 import FaceFrame from './face-frame';
 
+/**
+ * 单个图片信息
+ */
 export default class Image {
   public fileName: string
   public imageId: string
@@ -15,6 +18,19 @@ export default class Image {
         this.faces.push(new FaceFrame(face))
       })
     }
+  }
 
+  /**
+   * 检查这个相片里的人像有没有这个faceToken
+   * @param faceToken
+   */
+  public checkFaceTokenisHere(faceToken: string): boolean {
+    let result: boolean = false
+    this.faces.forEach((faceFrame) => {
+      if (faceFrame.matchFaceToken(faceToken)) {
+        result = true
+      }
+    })
+    return result
   }
 }
