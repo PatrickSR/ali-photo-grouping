@@ -23,4 +23,8 @@ export default class FaceFrame {
   public matchFaceToken(token: string): boolean {
     return token === this.faceToken
   }
+
+  public matchFaceTokens(tokens: string[]): boolean {
+    return tokens.some((token) => token === this.faceToken)
+  }
 }

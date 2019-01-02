@@ -33,4 +33,8 @@ export default class Image {
     })
     return result
   }
+
+  public getImageUrl() {
+    return `./img/image_category/${this.fileName}`
+  }
 }

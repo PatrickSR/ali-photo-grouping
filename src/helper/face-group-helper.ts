@@ -24,11 +24,17 @@ export default class FaceGroupHelper {
     return this.imageData
   }
 
-  // public findFaceTokenInWhichImages(faceTokens: string[]): Image[] {
-  //   faceTokens.forEach((reqFaceToken) => {
-  //     const  = this.imageData.filter((image: Image) => {
-  //       return image
-  //     })
-  //   })
-  // }
+  public findFaceTokenInWhichImages(faceTokens: string[]): Image[] {
+    // tslint:disable-next-line:no-shadowed-variable
+    const result: Image[] = []
+
+    faceTokens.forEach((reqFaceToken) => {
+      this.imageData.forEach((image) => {
+        if (image.checkFaceTokenisHere(reqFaceToken)) {
+          result.push(image)
+        }
+      })
+    })
+    return result
+  }
 }
